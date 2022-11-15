@@ -1,8 +1,171 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>My Personal Website</title>
-  </head>
-  <body>
-    <h1>This is for my playlists</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script defer type="text/javascript" src="script.js" ></script>
+  <title>BARcartTENDER</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <h1>BARTENDER</h1>
+
+<!-- WHERE ALL THE PHOTOS ARE, CLICK ON THEM AND THEY WILL HAVE RECIPES -->
+
+  <h2>Saved Recipes</h2>
+    <div id="saved-recipes">
+    </div>
+
+<!-- ONCE YOU CLICK ON A COCKTAIL, IT WILL PUT THE INFORMATION HERE WITH THE NAME OF THE DRINK IN THE TITLE -->
+
+  <h3>Make a drink!</h3>
+    <div id="drink-name"></div>
+    <div id="drink-ingredients"></div>
+
+<!-- CLICK ON DIFFERENT INGREDIENTS AND YOU WILL MAKE A COCKTAIL THAT YOU CAN ADD TO THE SAVED LIST -->
+<h2>New Cocktail</h2>
+  <div id="form-wrapper">
+    <button id="toggleCocktailForm">New Cocktail</button>
+    <form id="new-cocktail">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="new-name" />
+      <div id="checkboxes">
+        <label>Base</label>
+        <ul>
+          <li><input type="checkbox"> Vodka</li>
+          <li><input type="checkbox"> Gin</li>
+          <li><input type="checkbox"> Whiskey</li>
+          <li><input type="checkbox"> Tequila</li>
+          <li><input type="checkbox"> Rum</li>
+          <li><input type="checkbox"> Mezcal</li>
+          <li><input type="checkbox"> Champange</li>
+        </ul>
+      </div>
+      <div id="checkboxes">
+        <label>Liqueurs</label>
+        <ul>
+          <li><input type="checkbox"> Campari</li>
+          <li><input type="checkbox"> Sweet Vermouth</li>
+          <li><input type="checkbox"> Vermouth</li>
+          <li><input type="checkbox"> Baileys</li>
+          <li><input type="checkbox"> Kahlua</li>
+          <li><input type="checkbox"> Triple Sec</li>
+        </ul>
+      </div>
+      <div id="checkboxes">
+        <label>Ingredients</label>
+        <ul>
+          <li><input type="checkbox"> Soda Water</li>
+          <li><input type="checkbox"> Tonic</li>
+          <li><input type="checkbox"> Ginger Beer</li>
+          <li><input type="checkbox"> Cola</li>
+          <li><input type="checkbox"> Orange Juice</li>
+          <li><input type="checkbox"> Pinapple Juice</li>
+          <li><input type="checkbox"> Tomato Juice</li>
+          <li><input type="checkbox"> Espresso</li>
+
+        </ul>
+      </div>
+      <div id="checkboxes">
+        <label>Extras</label>
+        <ul>
+          <li><input type="checkbox"> Bitters</li>
+          <li><input type="checkbox"> Cherries</li>
+          <li><input type="checkbox"> Olives</li>
+          <li><input type="checkbox"> Simple Syrup</li>
+          <li><input type="checkbox"> Sugar</li>
+          <li><input type="checkbox"> Tajin</li>
+          <li><input type="checkbox"> Salt</li>
+
+        </ul>
+      </div>
+      <div id="checkboxes">
+        <label>Citrus</label>
+        <ul>
+          <li><input type="checkbox"> Lime</li>
+          <li><input type="checkbox"> Lemon</li>
+          <li><input type="checkbox"> Orange</li>
+        </ul>
+      </div>
+      <label for="image">Image: </label>
+      <input type="text" name="image" id="new-image" />
+      <label for="new-comment">Comment: </label>
+      <textarea name="new-comment" id="new-comment"></textarea>
+      <input type="submit" value="Create" />
+    </form>
+  </div>
+
+<!-- CLICK ON THE INGREDIENTS YOU OWN AND IT WILL RETURN DRINK OPTIONS YOU CAN MAKE -->
+
+  <form id="my-ingredients">
+    <h2>What can I make with my ingredients?</h2>
+    <div id="checkboxes">
+      <label>Base</label>
+      <ul>
+        <li><input type="checkbox"> Vodka</li>
+        <li><input type="checkbox"> Gin</li>
+        <li><input type="checkbox"> Whiskey</li>
+        <li><input type="checkbox"> Tequila</li>
+        <li><input type="checkbox"> Rum</li>
+        <li><input type="checkbox"> Mezcal</li>
+        <li><input type="checkbox"> Champange</li>
+      </ul>
+    </div>
+
+    <div id="checkboxes">
+      <label>Liquors</label>
+      <ul>
+        <li><input type="checkbox"> Campari</li>
+        <li><input type="checkbox"> Sweet Vermouth</li>
+        <li><input type="checkbox"> Vermouth</li>
+        <li><input type="checkbox"> Baileys</li>
+        <li><input type="checkbox"> Kahlua</li>
+        <li><input type="checkbox"> Triple Sec</li>
+      </ul>
+    </div>
+
+    <div id="checkboxes">
+      <label>Ingredients</label>
+      <ul>
+        <li><input type="checkbox"> Soda Water</li>
+        <li><input type="checkbox"> Tonic</li>
+        <li><input type="checkbox"> Ginger Beer</li>
+        <li><input type="checkbox"> Cola</li>
+        <li><input type="checkbox"> Orange Juice</li>
+        <li><input type="checkbox"> Pinapple Juice</li>
+        <li><input type="checkbox"> Tomato Juice</li>
+
+      </ul>
+    </div>
+
+    <div id="checkboxes">
+      <label>Extras</label>
+      <ul>
+        <li><input type="checkbox"> Bitters</li>
+        <li><input type="checkbox"> Cherries</li>
+        <li><input type="checkbox"> Olives</li>
+        <li><input type="checkbox"> Simple Syrup</li>
+        <li><input type="checkbox"> Sugar</li>
+        <li><input type="checkbox"> Tajin</li>
+        <li><input type="checkbox"> Salt</li>
+
+      </ul>
+    </div>
+
+    <div id="checkboxes">
+      <label>Citrus</label>
+      <ul>
+        <li><input type="checkbox"> Lime</li>
+        <li><input type="checkbox"> Lemon</li>
+        <li><input type="checkbox"> Orange</li>
+      </ul>
+    </div>
+    <input type="submit" value="Create" />
+  </form>
+
+</body>
 </html>

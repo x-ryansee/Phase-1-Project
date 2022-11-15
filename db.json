@@ -1,0 +1,60 @@
+{
+    "drinks": [
+      {
+        "id": 1,
+        "name": "Negroni",
+        "base": "Gin",
+        "liqueurs": ["Campari", "Sweet Vermouth"],
+        "ingredients": "",
+        "extras": "",
+        "citrus": "Orange",
+        "image": "https://www.liquor.com/thmb/hhpI16hGx5D1bNOMH07QafEIRHw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/negroni-720x720-primary-535dee7b50914af1810b1927b69dbe46.jpg",
+        "comment": "Garnish with an orange peel"
+      },
+      {
+        "id": 2,
+        "name": "Gin & Tonic",
+        "base": "Gin",
+        "liqueurs": "",
+        "ingredients": "Tonic",
+        "extras": "",
+        "citrus": "Lime",
+        "image": "https://www.allrecipes.com/thmb/0PKbNBTJeI2Dj61kRDo6S1hx1Hs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Gin-and-Tonic-Jennifer-Baker-2000-e3eeedfb409943999111b40d68a787ca.jpg",
+        "comment": "Don't forget citrus!"
+
+      },
+      {
+        "id": 3,
+        "name": "Whiskey Sour",
+        "base": "Whiskey",
+        "liqueurs": "",
+        "ingredients": "simple syrup",
+        "extras": "" ,
+        "citrus": "Lemon",
+        "image": "https://www.whisky-sour.com/images/16x9/whiskey-sour-16x9.jpg",
+        "comment": "Get fancy with some shaked eggwhite"
+      },
+      {
+        "id": 4,
+        "name": "Moskow Mule",
+        "base": "Vodka",
+        "liqueurs": "" ,
+        "ingredients": "Ginger Beer",
+        "extras": "" ,
+        "citrus": "Lime",
+        "image": "https://www.liquor.com/thmb/eV1GXL1KKZRxf9hSalEJBXJ3VPk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__03__07152853__moscow-mule-720x720-recipe-61ce552013b04880901b2abfb63017fd.jpg",
+        "comment": "Best with fresh lime juice"
+      },
+      {
+        "id": 5,
+        "name": "Espresso Martini",
+        "base": "Vodka",
+        "liqueurs": ["Baileys", "Kahlua"],
+        "ingredients": "Espresso", 
+        "extras": "" ,
+        "citrus": "" ,
+        "image": "https://preppykitchen.com/wp-content/uploads/2021/01/espresso-martini-feature.jpg",
+        "comment": "Garnish with coffee beans"
+      }
+    ]
+  }
