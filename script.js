@@ -25,8 +25,7 @@ function renderDetails(drink) {
     const drinkIngredients = document.querySelector("#drink-ingredients");
     drinkIngredients.textContent = drink.ingredients
 }
-const toggleBookFormButton = document.querySelector('#toggleBookForm');
-let bookFormVisible = false;
+
 
 
 
@@ -49,3 +48,20 @@ function makeNewCocktail(event) {
     }
 addCocktailToBar(newCocktail)
 }
+
+const toggleCocktailFormButton = document.querySelector('#toggleCocktailForm');
+let cocktailFormVisible = false;
+
+function toggleCocktailForm() {
+  const form = document.querySelector('#new-cocktail')
+  form.classList.toggle('collapsed')
+  if (form.classList.contains('collapsed')) {
+    cocktailFormVisible = false;
+    toggleCocktailFormButton.textContent = "New Cocktail";
+  } else {
+    cocktailFormVisible = true;
+    toggleCocktailFormButton.textContent = "Hide Cocktail Form";
+  }
+}
+
+toggleCocktailFormButton.addEventListener('click', toggleCocktailForm);
