@@ -4,7 +4,7 @@ fetch("http://localhost:3000/drinks")
 .then(res => res.json())
 .then(data => addCocktailsToBar(data));
 
-// PICTURES SHOW UP, 1ST EVENT LISTENER (CLICK)
+// PICTURES hide UP, 1ST EVENT LISTENER (CLICK)
 
 const savedRecipes = document.getElementById("saved-recipes")
 const addCocktailToBar = drink => {
@@ -17,9 +17,6 @@ const addCocktailToBar = drink => {
 const addCocktailsToBar = drinks => {
     drinks.forEach(addCocktailToBar)
 }
-
-
-
 
 
 
@@ -42,82 +39,89 @@ function renderDetails(drink) {
 
 
 
-
-
-
-
-// ALLOWS CHECKBOXES TO LOG, 2ND EVENT LISTENER(CHANGE)
-
-const baseBox = document.getElementsByClassName("base-box")[0];
-const inputs = baseBox.getElementsByTagName("input");
-
-for (const input of inputs) {
-  input.addEventListener("change", () => logValues());
-}
-
-function logValues() {
-  const output = [];
-  for (const input of inputs) {
-    output.push([input.value, input.checked]);
-  }
-  console.log(output);
-}
-
-
-
-
-
-// ADDS NEW COCTAIL TO RECIPE LIST, 3RD EVENT LISTENER(SUBMIT)
+// ADDS NEW COCKTAIL TO RECIPE LIST, 2ND EVENT LISTENER(SUBMIT)
 
 const newCocktailForm = document.querySelector("#new-cocktail");
 newCocktailForm.addEventListener("submit", makeNewCocktail);
 
 function makeNewCocktail(event) {
+    const base = [...event.target.querySelectorAll('.base-box input[type=checkbox]:checked')].map(i => i.value)
+    const liqueurs = [...event.target.querySelectorAll('.liqueurs-box input[type=checkbox]:checked')].map(i => i.value)
+    const ingredients = [...event.target.querySelectorAll('.ingredients-box input[type=checkbox]:checked')].map(i => i.value)
+    const extras = [...event.target.querySelectorAll('.extras-box input[type=checkbox]:checked')].map(i => i.value)
+    const citrus = [...event.target.querySelectorAll('.citrus-box input[type=checkbox]:checked')].map(i => i.value)
     event.preventDefault();
     const newCocktail = {
         name: event.target.name.value,
-        base: event.target.input.value,
-        liqueurs: event.target.liqueurs,
-        ingredients: event.target.ingredients,
-        extras: event.target.extras,
-        citrus: event.target.citrus,
+        base: base,
+        liqueurs: liqueurs,
+        ingredients: ingredients,
+        extras: extras,
+        citrus: citrus,
         image: event.target.image.value,
         // comment: event.target.comment.value,
     
     }
     console.log(newCocktail)
 addCocktailToBar(newCocktail)
+
 }
 
 //TOGGLE FORM NOT WORKING
 
 const toggleCocktailFormButton = document.querySelector('#toggleCocktailForm');
+const cocktailForm = document.querySelector('#new-cocktail')
 let cocktailFormVisible = false;
 
 function toggleCocktailForm() {
-  const form = document.querySelector('#new-cocktail')
-  form.classList.toggle('collapsed')
-  if (form.classList.contains('collapsed')) {
-    cocktailFormVisible = false;
-    toggleCocktailFormButton.textContent = "New Cocktail";
+  if (cocktailFormVisible) {
+hideCocktailForm();
   } else {
-    cocktailFormVisible = true;
-    toggleCocktailFormButton.textContent = "Hide Cocktail Form";
+    showCocktailForm();
   }
 }
+
+
+function showCocktailForm() {
+    cocktailFormVisible = true;
+    cocktailForm.classList.remove('collapsed');
+    toggleCocktailFormButton.textContent = "Hide cocktail form";
+}
+
+function hideCocktailForm() {
+    cocktailFormVisible = false;
+    cocktailForm.classList.add('collapsed');
+    toggleCocktailFormButton.textContent = "New Cocktail";
+}
+
 
 toggleCocktailFormButton.addEventListener('click', toggleCocktailForm);
 
 
+const toggleMyOptionsButton = document.querySelector('#toggleMyOptionsForm');
+const myOptionsForm = document.querySelector('#my-options-form')
+let myOptionsFormVisible = false;
 
-//how to grab the names from the DOM and use them in Javascript
+function toggleMyOptionsForm() {
+  if (myOptionsFormVisible) {
+hideMyOptionsForm();
+  } else {
+    showMyOptionsForm();
+  }
+}
 
-//console log to test stuff
-//RENDER INGREDIENTS SELECTED
-// function myIngredients() {
-//     if (document.getElementsByClassName("checkbox1", [0]).checked == true) {
-//         console.log('checked')
-//     } else {
-//         console.log('false')
-//     }
-// }
+
+function showMyOptionsForm() {
+    myOptionsFormVisible = true;
+    myOptionsForm.classList.remove('collapsed');
+    toggleMyOptionsButton.textContent = "Hide my options form";
+}
+
+function hideMyOptionsForm() {
+    myOptionsFormVisible = false;
+    myOptionsForm.classList.add('collapsed');
+    toggleMyOptionsButton.textContent = "New Search";
+}
+
+
+toggleMyOptionsButton.addEventListener('click', toggleMyOptionsForm);
