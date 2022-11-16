@@ -22,8 +22,16 @@ const addCocktailsToBar = drinks => {
 function renderDetails(drink) {
     const drinkName = document.querySelector("#drink-name");
     drinkName.textContent = drink.name
+    const drinkBase = document.querySelector("#drink-base");
+    drinkBase.textContent = drink.base
+    const drinkLiqueurs = document.querySelector("#drink-liqueurs");
+    drinkLiqueurs.textContent = drink.liqueurs
     const drinkIngredients = document.querySelector("#drink-ingredients");
     drinkIngredients.textContent = drink.ingredients
+    const drinkExtras = document.querySelector("#drink-extras");
+    drinkExtras.textContent = drink.extras
+    const drinkCitrus = document.querySelector("#drink-citrus");
+    drinkCitrus.textContent = drink.citrus
 }
 
 
@@ -44,11 +52,13 @@ function makeNewCocktail(event) {
         citrus: event.target.citrus,
         image: event.target.image.value,
         // comment: event.target.comment.value,
-
+    
     }
+    console.log(newCocktail)
 addCocktailToBar(newCocktail)
 }
 
+//TOGGLE FORM NOT WORKING
 const toggleCocktailFormButton = document.querySelector('#toggleCocktailForm');
 let cocktailFormVisible = false;
 
@@ -65,3 +75,20 @@ function toggleCocktailForm() {
 }
 
 toggleCocktailFormButton.addEventListener('click', toggleCocktailForm);
+
+
+
+
+
+
+//how to grab the names from the DOM and use them in Javascript
+
+//console log to test stuff
+//RENDER INGREDIENTS SELECTED
+// function myIngredients() {
+//     if (document.getElementsByClassName("checkbox1","checkbox2").checked == true) {
+//         console.log('checked')
+//     } else {
+//         console.log('false')
+//     }
+// }
