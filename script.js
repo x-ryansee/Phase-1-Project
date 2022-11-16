@@ -4,20 +4,26 @@ fetch("http://localhost:3000/drinks")
 .then(res => res.json())
 .then(data => addCocktailsToBar(data));
 
+// PICTURES SHOW UP, 1ST EVENT LISTENER (CLICK)
+
 const savedRecipes = document.getElementById("saved-recipes")
 const addCocktailToBar = drink => {
     const drinkImage = document.createElement("img");
     drinkImage.src = drink.image
     savedRecipes.append(drinkImage)
-    //working pictures on the page
     drinkImage.addEventListener("click", (event) => {renderDetails(drink)});
-    // drinkImage.addEventListener("click", (event) =>
-    //     drinkImage.target.classList.toggle() 
+    // drinkImage.addEventListener("click", (event) => {makeImageBold(drink)});
 }
 const addCocktailsToBar = drinks => {
-    console.log(drinks)
     drinks.forEach(addCocktailToBar)
 }
+
+
+
+
+
+
+// WHEN PICTURE IS CLICKED, INGREDIENTS SHOW UP
 
 function renderDetails(drink) {
     const drinkName = document.querySelector("#drink-name");
@@ -37,7 +43,32 @@ function renderDetails(drink) {
 
 
 
-// Add cocktail to top menu
+
+
+
+// ALLOWS CHECKBOXES TO LOG, 2ND EVENT LISTENER(CHANGE)
+
+const baseBox = document.getElementsByClassName("base-box")[0];
+const inputs = baseBox.getElementsByTagName("input");
+
+for (const input of inputs) {
+  input.addEventListener("change", () => logValues());
+}
+
+function logValues() {
+  const output = [];
+  for (const input of inputs) {
+    output.push([input.value, input.checked]);
+  }
+  console.log(output);
+}
+
+
+
+
+
+// ADDS NEW COCTAIL TO RECIPE LIST, 3RD EVENT LISTENER(SUBMIT)
+
 const newCocktailForm = document.querySelector("#new-cocktail");
 newCocktailForm.addEventListener("submit", makeNewCocktail);
 
@@ -45,7 +76,7 @@ function makeNewCocktail(event) {
     event.preventDefault();
     const newCocktail = {
         name: event.target.name.value,
-        base: event.target.base,
+        base: event.target.input.value,
         liqueurs: event.target.liqueurs,
         ingredients: event.target.ingredients,
         extras: event.target.extras,
@@ -59,6 +90,7 @@ addCocktailToBar(newCocktail)
 }
 
 //TOGGLE FORM NOT WORKING
+
 const toggleCocktailFormButton = document.querySelector('#toggleCocktailForm');
 let cocktailFormVisible = false;
 
@@ -78,15 +110,12 @@ toggleCocktailFormButton.addEventListener('click', toggleCocktailForm);
 
 
 
-
-
-
 //how to grab the names from the DOM and use them in Javascript
 
 //console log to test stuff
 //RENDER INGREDIENTS SELECTED
 // function myIngredients() {
-//     if (document.getElementsByClassName("checkbox1","checkbox2").checked == true) {
+//     if (document.getElementsByClassName("checkbox1", [0]).checked == true) {
 //         console.log('checked')
 //     } else {
 //         console.log('false')

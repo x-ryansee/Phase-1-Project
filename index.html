@@ -33,68 +33,90 @@
 <!-- CLICK ON DIFFERENT INGREDIENTS AND YOU WILL MAKE A COCKTAIL THAT YOU CAN ADD TO THE SAVED LIST -->
 <h2>New Cocktail</h2>
   <div id="form-wrapper">
-    <button id="toggleCocktailForm" class="collapsed">New Cocktail </button>
+    <button id="toggleCocktailForm" class="collapsed"> New Cocktail </button>
     <form id="new-cocktail">
-      <label for="name">Name: </label>
+      <label for="name">Name: </label><br />
       <input type="text" name="name" id="new-name" />
-      <div id="checkboxes1">
-        <label>Base</label>
-        <ul type="checkbox" value="base" id="base">
-          <li><input type="checkbox" value="Vodka"> Vodka</li>
-          <li><input type="checkbox" value="Gin"> Gin</li>
-          <li><input type="checkbox" value="Whiskey"> Whiskey</li>
-          <li><input type="checkbox" value="Tequila"> Tequila</li>
-          <li><input type="checkbox" value="Rum"> Rum</li>
-          <li><input type="checkbox" value="Mezcal"> Mezcal</li>
-          <li><input type="checkbox" value="Champagne"> Champagne</li>
-        </ul>
-      </div>
-      <div id="checkboxes2">
-        <label>Liqueurs</label>
-        <ul type="checkbox" value="liqueurs" id="liqueurs"></ul>>
-          <li><input type="checkbox" value="Campari"> Campari</li>
-          <li><input type="checkbox" value="Sweet Vermouth"> Sweet Vermouth</li>
-          <li><input type="checkbox" value="Vermouth"> Vermouth</li>
-          <li><input type="checkbox" value="Baileys"> Baileys</li>
-          <li><input type="checkbox" value="Kahlua"> Kahlua</li>
-          <li><input type="checkbox" value="Triple Sec"> Triple Sec</li>
-        </ul>
-      </div>
-      <div id="checkboxes3">
-        <label>Ingredients</label>
-        <ul  type="checkbox" value="ingredients" id="ingredients"></ul>>
-          <li><input type="checkbox" value="Soda Water"> Soda Water</li>
-          <li><input type="checkbox" value="Tonic"> Tonic</li>
-          <li><input type="checkbox" value="Ginger Beer"> Ginger Beer</li>
-          <li><input type="checkbox" value="Cola"> Cola</li>
-          <li><input type="checkbox" value="Orange Juice"> Orange Juice</li>
-          <li><input type="checkbox" value="Pinaplle Juice"> Pinapple Juice</li>
-          <li><input type="checkbox" value="Tomato Juice"> Tomato Juice</li>
-          <li><input type="checkbox" value="Espresso"> Espresso</li>
 
-        </ul>
+      <div class="base-box">
+        <label>Base</label><br />
+        <input type="checkbox" class="base" id="Vodka" name="Vodka" value="Vodka">
+        <label for="Vodka"> Vodka</label><br>
+        <input type="checkbox" class="base" id="Gin" name="Gin" value="Gin">
+        <label for="Gin"> Gin</label><br>
+        <input type="checkbox" class="base" id="Whiskey" name="Whiskey" value="Whiskey">
+        <label for="Whiskey"> Whiskey</label><br>
+        <input type="checkbox" class="base" id="Tequila" name="Tequila" value="Tequila">
+        <label for="Tequila"> Tequila</label><br>
+        <input type="checkbox" class="base" id="Rum" name="Rum" value="Rum">
+        <label for="Rum"> Rum</label><br>
+        <input type="checkbox" class="base" id="Mezcal" name="Mezcal" value="Mezcal">
+        <label for="Mezcal"> Mezcal</label><br>
+        <input type="checkbox" class="base" id="Champagne" name="Champagne" value="Champagne">
+        <label for="Champagne"> Champagne</label><br><br />
       </div>
-      <div id="checkboxes4">
-        <label>Extras</label>
-        <ul  type="checkbox" value="extras" id="extras"></ul>>
-          <li><input type="checkbox" value="Bitters"> Bitters</li>
-          <li><input type="checkbox" value="Cherries"> Cherries</li>
-          <li><input type="checkbox" value="Olives"> Olives</li>
-          <li><input type="checkbox" value="Simple Syrup"> Simple Syrup</li>
-          <li><input type="checkbox" value="Sugar"> Sugar</li>
-          <li><input type="checkbox" value="Tajin"> Tajin</li>
-          <li><input type="checkbox" value="Salt"> Salt</li>
 
-        </ul>
+      <div class="liqueurs-box">
+        <label>Liqueurs</label><br />
+        <input type="checkbox" class="liqueurs" id="Campari" name="Campari" value="Campari">
+        <label for="Campari"> Campari</label><br>
+        <input type="checkbox" class="liqueurs" id="Sweet Vermouth" name="Sweet Vermouth" value="Sweet Vermouth">
+        <label for="Sweet Vermouth"> Sweet Vermouth</label><br>
+        <input type="checkbox" class="liqueurs" id="Dry Vermouth" name="Dry Vermouth" value="Dry Vermouth">
+        <label for="Dry Vermouth"> Dry Vermouth</label><br>
+        <input type="checkbox" class="liqueurs" id="Baileys" name="Baileys" value="Baileys">
+        <label for="Baileys"> Baileys</label><br>
+        <input type="checkbox" class="liqueurs" id="Kahlua" name="Kahlua" value="Kahlua">
+        <label for="Kahlua"> Kahlua</label><br>
+        <input type="checkbox" class="liqueurs" id="Triple Sec" name="Triple Sec" value="Triple Sec">
+        <label for="Triple Sec"> Triple Sec</label><br><br />
       </div>
-      <div id="checkboxes5">
-        <label>Citrus</label>
-        <ul  type="checkbox" value="citrus" id="citrus"></ul>>
-          <li><input type="checkbox" value="Lime"> Lime</li>
-          <li><input type="checkbox" value="Lemon"> Lemon</li>
-          <li><input type="checkbox" value="Orange"> Orange</li>
-        </ul>
+      <div class="ingredients-box">
+        <label>Ingredients</label><br />
+        <input type="checkbox" class="ingredients" id="Soda Water" name="Soda Water" value="Soda Water">
+        <label for="Soda Water"> Soda Water</label><br>
+        <input type="checkbox" class="ingredients" id="Tonic" name="Tonic" value="Tonic">
+        <label for="Tonic"> Tonic</label><br>
+        <input type="checkbox" class="ingredients" id="Ginger" name="Ginger" value="Ginger">
+        <label for="Ginger"> Ginger</label><br>
+        <input type="checkbox" class="ingredients" id="Cola" name="Cola" value="Cola">
+        <label for="Cola"> Cola</label><br>
+        <input type="checkbox" class="ingredients" id="Orange Juice" name="Orange Juice" value="Orange Juice">
+        <label for="Orange Juice"> Orange Juice</label><br>
+        <input type="checkbox" class="ingredients" id="Pinaplle Juice" name="Pinaplle Juice" value="Pinaplle Juice">
+        <label for="Pinaplle Juice"> Pinaplle Juice</label><br>
+        <input type="checkbox" class="ingredients" id="Tomato Juice" name="Tomato Juice" value="Tomato Juice">
+        <label for="Tomato Juice"> Tomato Juice</label><br>
+        <input type="checkbox" class="ingredients" id="Espresso" name="Espresso" value="Espresso">
+        <label for="Espresso"> Espresso</label><br><br />
       </div>
+      <div class="extras-box">
+        <label>Extras</label><br />
+        <input type="checkbox" class="extras" id="Bitters" name="Bitters" value="Bitters">
+        <label for="Bitters"> Bitters</label><br>
+        <input type="checkbox" class="extras" id="Cherries" name="Cherries" value="Cherries">
+        <label for="Cherries"> Cherries</label><br>
+        <input type="checkbox" class="extras" id="Olives" name="Olives" value="Olives">
+        <label for="Olives"> Olives</label><br>
+        <input type="checkbox" class="extras" id="Simple Syrup" name="Simple Syrup" value="Simple Syrup">
+        <label for="Simple Syrup"> Simple Syrup</label><br>
+        <input type="checkbox" class="extras" id="Sugar" name="Sugar" value="Sugar">
+        <label for="Sugar"> Sugar</label><br>
+        <input type="checkbox" class="extras" id="Tajin" name="Tajin" value="Tajin">
+        <label for="Tajin"> Tajin</label><br>
+        <input type="checkbox" class="extras" id="Salt" name="Salt" value="Salt">
+        <label for="Salt"> Salt</label><br><br />
+      </div>
+      <div class="citrus-box">
+        <label>Citrus</label><br />
+        <input type="checkbox" class="citrus" id="Lime" name="Lime" value="Lime">
+        <label for="Lime"> Lime</label><br>
+        <input type="checkbox" class="citrus" id="Lemon" name="Lemon" value="Lemon">
+        <label for="Lemon"> Lemon</label><br>
+        <input type="checkbox" class="citrus" id="Orange" name="Orange" value="Orange">
+        <label for="Orange"> Orange</label><br><br />
+      </div>
+
       <label for="image">Image: </label>
       <input type="text" name="image" id="new-image" />
       <label for="new-comment">Comment: </label>
@@ -105,7 +127,7 @@
 
 <!-- CLICK ON THE INGREDIENTS YOU OWN AND IT WILL RETURN DRINK OPTIONS YOU CAN MAKE -->
 
-
+<!-- 
     <h2>What can I make with my ingredients?</h2>
     <form id="my-ingredients">
       <div id="checkboxes">
@@ -167,7 +189,7 @@
         </ul>
       </div>
     <input type="submit" value="Create" />
-  </form>
+  </form> -->
 
 </body>
 </html>
