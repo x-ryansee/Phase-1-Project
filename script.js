@@ -1,10 +1,10 @@
-// try #1
+
 
 fetch("http://localhost:3000/drinks")
 .then(res => res.json())
 .then(data => addCocktailsToBar(data));
 
-// PICTURES hide UP, 1ST EVENT LISTENER (CLICK)
+// PICTURES UP, 1ST EVENT LISTENER (CLICK)
 
 const savedRecipes = document.getElementById("saved-recipes")
 const addCocktailToBar = drink => {
@@ -43,7 +43,6 @@ function renderDetails(drink) {
 
 const newCocktailForm = document.querySelector("#new-cocktail");
 newCocktailForm.addEventListener("submit", makeNewCocktail);
-
 function makeNewCocktail(event) {
     const base = [...event.target.querySelectorAll('.base-box input[type=checkbox]:checked')].map(i => i.value)
     const liqueurs = [...event.target.querySelectorAll('.liqueurs-box input[type=checkbox]:checked')].map(i => i.value)
@@ -59,15 +58,15 @@ function makeNewCocktail(event) {
         extras: extras,
         citrus: citrus,
         image: event.target.image.value,
-        // comment: event.target.comment.value,
     
     }
+    event.target.reset()
     console.log(newCocktail)
 addCocktailToBar(newCocktail)
 
 }
 
-//TOGGLE FORM NOT WORKING
+//TOGGLE BOTH FORMS
 
 const toggleCocktailFormButton = document.querySelector('#toggleCocktailForm');
 const cocktailForm = document.querySelector('#new-cocktail')
@@ -80,7 +79,6 @@ hideCocktailForm();
     showCocktailForm();
   }
 }
-
 
 function showCocktailForm() {
     cocktailFormVisible = true;
@@ -125,3 +123,18 @@ function hideMyOptionsForm() {
 
 
 toggleMyOptionsButton.addEventListener('click', toggleMyOptionsForm);
+
+
+window.addEventListener('keydown', (e) => {
+  console.log(e);
+  console.log(e.key);
+  if (e.key === "32") {
+    if (cocktailFormVisible) {
+      toggleCocktailForm();
+    }
+    if (myOptionsFormVisible) {
+      toggleMyOptionsForm();
+    }
+  }
+
+})

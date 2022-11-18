@@ -55,6 +55,28 @@
         "citrus": "" ,
         "image": "https://preppykitchen.com/wp-content/uploads/2021/01/espresso-martini-feature.jpg",
         "comment": "Garnish with coffee beans"
+      },
+      {
+        "id": 6,
+        "name": "French 75",
+        "base": ["Champagne", "Gin"],
+        "liqueurs": "",
+        "ingredients": "", 
+        "extras": "Simple Syrup" ,
+        "citrus": "Lemon" ,
+        "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/french-75-1592951630.jpg?crop=1xw:1xh;center,top&resize=980:*&output-quality=50",
+        "comment": ""
+      },
+      {
+        "id": 7,
+        "name": "Old Fashioned",
+        "base": "Whiskey",
+        "liqueurs": "",
+        "ingredients": "Sugar", 
+        "extras": "Bitters" ,
+        "citrus": "Orange" ,
+        "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/old-fashioned-1592951230.jpg?crop=1xw:1xh;center,top&resize=980:*&output-quality=50",
+        "comment": ""
       }
     ]
   }
